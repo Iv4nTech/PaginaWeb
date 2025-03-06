@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoDev - Desarrollo Sostenible</title>
+    <style>
+        :root {
+            --primary-bg: #1a1a1a;
+            --secondary-bg: #2d2d2d;
+            --text-color: #ffffff;
+            --header-footer-bg: #2c3e50;
+        }
+
+        [data-theme="light"] {
+            --primary-bg: #f4f4f4;
+            --secondary-bg: #ffffff;
+            --text-color: #000000;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--header-footer-bg);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .theme-switch-wrapper {
+            position: absolute;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        [data-theme="light"] .slider:before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>');
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Resto del CSS manteniendo los estilos anteriores */
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .section {
+            background: var(--secondary-bg);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        footer {
+            background-color: var(--header-footer-bg);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌱 EcoDev - Plataforma para un Desarrollo Tecnológico Sostenible</h1>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>📌 Objetivo</h2>
+            <p>EcoDev es una plataforma diseñada para ayudar a empresas y emprendedores del sector tecnológico a desarrollar software de manera más sostenible y eficiente, alineándose con los Objetivos de Desarrollo Sostenible (ODS). A través de herramientas innovadoras, certificaciones y formación, buscamos reducir el impacto ambiental del sector tecnológico mientras potenciamos la eficiencia y rentabilidad de las empresas.</p>
+        </div>
+        <div class="section">
+            <h2>🌍 ODS Relevantes</h2>
+            <p>Estos son algunos de los ODS en los que EcoDev tiene un impacto directo:</p>
+            <ul>
+                <li><strong>ODS 9:</strong> Industria, Innovación e Infraestructura - Impulsamos el desarrollo tecnológico sostenible.</li>
+                <li><strong>ODS 12:</strong> Producción y Consumo Responsables - Promovemos la optimización de recursos en el desarrollo de software.</li>
+                <li><strong>ODS 13:</strong> Acción por el Clima - Reducimos el impacto ambiental del software y los servicios digitales.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>⚡ ¿Cómo Funciona EcoDev?</h2>
+            <p>Ofrecemos diversas soluciones para fomentar la sostenibilidad en el sector tecnológico:</p>
+            <ul>
+                <li>📖 <strong>Guías y certificaciones:</strong> Metodologías para el desarrollo sostenible de software.</li>
+                <li>🔋 <strong>Medición de impacto:</strong> Herramientas para calcular el consumo energético de las aplicaciones y servidores.</li>
+                <li>🌱 <strong>Comunidad EcoDev:</strong> Espacio de networking para compartir mejores prácticas y experiencias.</li>
+                <li>📊 <strong>Panel de impacto ambiental:</strong> Para ayudar a empresas tecnológicas a reducir su huella de carbono.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>💡 Oportunidades y Riesgos</h2>
+            <p>Invertir en sostenibilidad en el sector tecnológico ofrece muchas ventajas:</p>
+            <ul>
+                <li>✅ <strong>Oportunidades:</strong> Diferenciación en el mercado, reducción de costos operativos y acceso a incentivos gubernamentales.</li>
+                <li>⚠️ <strong>Riesgos:</strong> Falta de concienciación, resistencia al cambio y necesidad de inversión inicial.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>📢 Propuesta para el Gobierno</h2>
+            <p>Solicitamos apoyo estatal para incentivar el desarrollo de software sostenible a través de:</p>
+            <ul>
+                <li>💰 Subvenciones y financiamiento para empresas que adopten prácticas sostenibles.</li>
+                <li>🏅 Creación de un sello de certificación estatal para software sostenible.</li>
+                <li>📈 Inclusión de métricas de sostenibilidad en proyectos tecnológicos públicos y privados.</li>
+            </ul>
+            <p><strong>Iniciativa presentada al gobierno del estado: "clase1DAWHM2425".</strong></p>
+        </div>
+    </div>
+    <footer>
+        <p>EcoDev &copy; 2025 - Desarrollo Tecnológico Sostenible | Formado por Iván Gómez, Ismael Gallo, Manuel Monterior</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.querySelector('.theme-switch input');
+            const html = document.documentElement;
+
+            // Obtener tema guardado o usar dark por defecto
+            let currentTheme = localStorage.getItem('theme') || 'dark';
+            html.setAttribute('data-theme', currentTheme);
+            toggle.checked = currentTheme === 'light';
+
+            toggle.addEventListener('change', () => {
+                currentTheme = toggle.checked ? 'light' : 'dark';
+                html.setAttribute('data-theme', currentTheme);
+                localStorage.setItem('theme', currentTheme);
+            });
+        });
+    </script>
+</body>
+</html>
